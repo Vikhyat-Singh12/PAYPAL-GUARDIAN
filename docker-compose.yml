@@ -1,0 +1,15 @@
+services:
+  db:
+    image: postgres:16
+    container_name: guardian-db
+    environment:
+      POSTGRES_USER: guardian
+      POSTGRES_PASSWORD: local_dev_password
+      POSTGRES_DB: guardian
+    ports:
+      - "5432:5432"
+    volumes:
+      - guardian_data:/var/lib/postgresql/data
+
+volumes:
+  guardian_data:
